@@ -6,7 +6,8 @@ const refs = {
 refs.nameInput.addEventListener("input", changeOutputNameHandler);
 
 function changeOutputNameHandler(event) {
-  const inputValue = event.currentTarget.value;
+  const inputValue = event.currentTarget.value.trim();
+  console.log(inputValue);
   if (inputValue === "") {
     refs.nameOutput.textContent = "Anonymous";
   } else {

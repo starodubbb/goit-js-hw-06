@@ -14,5 +14,7 @@ const makeIngredientsItem = (ingredient) => {
   return itemRef;
 };
 
+const ingredientsRef = document.querySelector("#ingredients");
 const ingredientsItemsRefs = ingredients.map(makeIngredientsItem);
-document.querySelector("#ingredients").append(...ingredientsItemsRefs);
+
+ingredientsRef.append(...ingredientsItemsRefs);

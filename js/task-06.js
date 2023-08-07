@@ -4,24 +4,18 @@ inputRef.addEventListener("blur", inputBlurHandler);
 
 function inputBlurHandler(event) {
   const target = event.currentTarget;
-  const neededLength = target.dataset.length;
+  const neededLength = Number(target.dataset.length);
 
-  if (target.value.length >= neededLength) {
-    showValidValidation(target);
-  } else {
-    showInvalidValidation(target);
-  }
+  target.value.trim().length === neededLength
+    ? showValidValidation(target)
+    : showInvalidValidation(target);
 }
 
 function showValidValidation(target) {
-  if (target.classList.contains("invalid")) {
-    target.classList.remove("invalid");
-  }
+  target.classList.remove("invalid");
   target.classList.add("valid");
 }
 function showInvalidValidation(target) {
-  if (target.classList.contains("valid")) {
-    target.classList.remove("valid");
-  }
+  target.classList.remove("valid");
   target.classList.add("invalid");
 }

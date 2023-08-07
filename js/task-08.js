@@ -10,7 +10,7 @@ function submitFormHandler(event) {
   const password = target.elements.password.value;
 
   if (email === "" || password === "") {
-    return console.log("Please fill in all the fields!");
+    return alert("Please fill in all the fields!");
   }
 
   const formData = {

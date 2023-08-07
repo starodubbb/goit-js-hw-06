@@ -3,9 +3,9 @@ const refs = {
   text: document.querySelector("#text"),
 };
 
+changeFontSizeHandler();
 refs.fontSizeControl.addEventListener("input", changeFontSizeHandler);
 
-function changeFontSizeHandler({ currentTarget }) {
-  console.log(currentTarget.value);
-  refs.text.style.fontSize = `${currentTarget.value}px`;
+function changeFontSizeHandler() {
+  refs.text.style.fontSize = `${refs.fontSizeControl.value}px`;
 }
